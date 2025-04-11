@@ -4,6 +4,11 @@ mod adapter;
 mod infrastructure;
 mod shared;
 
-fn main() {
-    println!("Hello, world!");
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    pretty_env_logger::init();
+    dotenv::dotenv().ok();
+
+
+    Ok(())
 }
