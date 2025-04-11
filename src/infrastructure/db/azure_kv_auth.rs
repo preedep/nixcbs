@@ -1,7 +1,7 @@
 use async_trait::async_trait;
 use crate::infrastructure::db::auth::{DBAuthAdapter, DBCredentials};
 
-// src/infrastructure/db/azure_kv_auth.rs
+
 pub struct AzureKeyVaultDBAuth;
 
 #[async_trait]

@@ -1,10 +1,11 @@
-// src/infrastructure/db/auth.rs
+
 pub struct DBCredentials {
     pub username: String,
     pub password: String,
     pub host: String,
     pub port: u16,
     pub dbname: String,
+    pub pool_size: usize,
 }
 
 #[async_trait::async_trait]

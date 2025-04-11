@@ -1,4 +1,4 @@
-// src/infrastructure/db/env_auth.rs
+
 use async_trait::async_trait;
 use crate::infrastructure::db::auth::{DBAuthAdapter, DBCredentials};
 
@@ -13,6 +13,7 @@ impl DBAuthAdapter for EnvDBAuth {
             host: std::env::var("DB_HOST")?,
             port: std::env::var("DB_PORT")?.parse()?,
             dbname: std::env::var("DB_NAME")?,
+            pool_size: std::env::var("DB_POOL_SIZE")?.parse()?,
         })
     }
 }
