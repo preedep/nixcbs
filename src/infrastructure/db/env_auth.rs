@@ -14,6 +14,7 @@ impl DBAuthAdapter for EnvDBAuth {
             port: std::env::var("DB_PORT")?.parse()?,
             dbname: std::env::var("DB_NAME")?,
             pool_size: std::env::var("DB_POOL_SIZE")?.parse()?,
+            ssl_mode: std::env::var("DB_SSL_MODE")?,
         })
     }
 }

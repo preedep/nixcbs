@@ -6,6 +6,7 @@ pub struct DBCredentials {
     pub port: u16,
     pub dbname: String,
     pub pool_size: usize,
+    pub ssl_mode: String,
 }
 
 #[async_trait::async_trait]

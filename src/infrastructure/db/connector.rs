@@ -8,8 +8,8 @@ pub async fn connect_with_adapter<A: DBAuthAdapter>(
 ) -> anyhow::Result<PgPool> {
     let creds = adapter.get_credentials().await?;
     let url = format!(
-        "postgres://{}:{}@{}:{}/{}",
-        creds.username, creds.password, creds.host, creds.port, creds.dbname
+        "postgres://{}:{}@{}:{}/{}?sslmode={}",
+        creds.username, creds.password, creds.host, creds.port, creds.dbname , creds.ssl_mode
     );
 
     let pool = PgPoolOptions::new()
